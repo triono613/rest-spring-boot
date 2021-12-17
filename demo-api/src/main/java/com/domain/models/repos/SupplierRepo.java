@@ -4,6 +4,8 @@ import com.domain.models.entities.Supplier;
 
 import org.springframework.data.repository.CrudRepository;
 
-public interface SupplierRepo extends CrudRepository<Supplier,Long> {
-    
+public interface SupplierRepo extends CrudRepository<Supplier, Long> {
+
+    public Supplier findByEmail(String email);
+
 }

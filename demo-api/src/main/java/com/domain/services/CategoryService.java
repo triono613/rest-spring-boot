@@ -3,7 +3,7 @@ package com.domain.services;
 import java.util.Optional;
 
 import javax.transaction.TransactionScoped;
-import javax.transaction.Transactional;
+// import javax.transaction.Transactional;
 
 import com.domain.models.entities.Category;
 import com.domain.models.repos.CategoryRepo;

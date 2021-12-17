@@ -15,6 +15,11 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
+// import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 //import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
@@ -44,7 +49,8 @@ public class Product implements Serializable {
     @JoinTable(name = "tbl_product_supplier", 
     joinColumns = @JoinColumn(name = "product_id"), 
     inverseJoinColumns = @JoinColumn(name = "supplier_id"))
-
+    
+    
     private Set<Supplier> suppliers;
 
     public Product() {
