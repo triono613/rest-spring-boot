@@ -11,10 +11,10 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+// import com.fasterxml.jackson.annotation.JsonBackReference;
+// import com.fasterxml.jackson.annotation.JsonIgnore;
 
-// import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 
 @Entity
 @Table(name = "tbl_suppliers")
@@ -35,9 +35,10 @@ public class Supplier implements Serializable {
     @Column(length = 100, nullable = false, unique = true)
     private String email;
 
+    
+    // @JsonIgnore
     @ManyToMany(mappedBy = "suppliers")
-    @JsonManagedReference
-    @JsonIgnore
+    // @JsonBackReference    
     private Set<Product> products;
 
     public Long getId() {
